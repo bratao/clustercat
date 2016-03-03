@@ -96,12 +96,9 @@ struct_model_metadata process_input(const struct cmd_args cmd_args, FILE *file, 
 			//printf("«%c» ", ch); fflush(stdout);
 			if (ch == ' ' || ch == '\t' || ch == '\n') { // end of a word
 
-				if (chars_in_sent > STDIN_SENT_MAX_CHARS) { // Line too long
-					curr_word_pos = 0;
-					curr_word[0] = '\0'; // truncate word
-				} else {
-					curr_word[curr_word_pos] = '\0'; // terminate word
-				}
+				
+				curr_word[curr_word_pos] = '\0'; // terminate word
+				
 
 				//printf("chars_in_sent=%u; max_chars=%u; curr_word=%s\n", chars_in_sent, STDIN_SENT_MAX_CHARS, curr_word); fflush(stdout);
 
